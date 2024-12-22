@@ -10,9 +10,14 @@ import {
   TooltipContent,
 } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
+import { useConversation } from '../../../../../hooks/useConversation';
 
 const MobileNav = () => {
+  const { isActive } = useConversation();
   const paths = useNavigation();
+
+  if (isActive) return null;
+
   return (
     <Card className='fixed bottom-4 w-[calc(100%-32px)] flex items-center h-16 p-2 lg:hidden'>
       <nav className='w-full'>
@@ -21,7 +26,7 @@ const MobileNav = () => {
             <li key={i} className='relative cursor-pointer'>
               <Link href={path.href}>
                 <Tooltip>
-                  <TooltipTrigger>
+                  <TooltipTrigger asChild>
                     <Button
                       size='icon'
                       variant={path.active ? 'default' : 'outline'}

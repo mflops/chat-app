@@ -21,7 +21,7 @@ const DesktopNav = () => {
             <li key={i} className='relative cursor-pointer'>
               <Link href={path.href}>
                 <Tooltip>
-                  <TooltipTrigger>
+                  <TooltipTrigger asChild>
                     <Button
                       size='icon'
                       variant={path.active ? 'default' : 'outline'}
