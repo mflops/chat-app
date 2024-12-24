@@ -11,6 +11,8 @@ import {
 } from '@/components/ui/tooltip';
 import { Button } from '@/components/ui/button';
 import { useConversation } from '../../../../../hooks/useConversation';
+import { ThemeToggle } from '@/components/ui/theme/theme-toggle';
+import { Badge } from '@/components/ui/badge';
 
 const MobileNav = () => {
   const { isActive } = useConversation();
@@ -27,12 +29,19 @@ const MobileNav = () => {
               <Link href={path.href}>
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <Button
-                      size='icon'
-                      variant={path.active ? 'default' : 'outline'}
-                    >
-                      {path.icon}
-                    </Button>
+                    <div>
+                      <Button
+                        size='icon'
+                        variant={path.active ? 'default' : 'outline'}
+                      >
+                        {path.icon}
+                      </Button>
+                      {path.count ? (
+                        <Badge className='absolute left-7 bottom-6 px-2'>
+                          {path.count}
+                        </Badge>
+                      ) : null}
+                    </div>
                   </TooltipTrigger>
                   <TooltipContent side='right'>
                     <p>{path.name}</p>
@@ -41,6 +50,9 @@ const MobileNav = () => {
               </Link>
             </li>
           ))}
+          <li>
+            <ThemeToggle />
+          </li>
           <li>
             <UserButton />
           </li>

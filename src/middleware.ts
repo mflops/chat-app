@@ -1,11 +1,17 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
 
-const isProtectedRoute = createRouteMatcher(['/']);
+const isPublicRoute = createRouteMatcher([
+  '/', // Home Page
+  //Add whatever other public route you want here
+]);
 
 export default clerkMiddleware(async (auth, req) => {
-  if (isProtectedRoute(req)) await auth.protect();
+  if (!isPublicRoute(req)) {
+    // Protect all non-public routes
+    await auth.protect();
+  }
 });
-
+// Configuration for route matching
 export const config = {
   matcher: [
     // Skip Next.js internals and all static files, unless found in search params

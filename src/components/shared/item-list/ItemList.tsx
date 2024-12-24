@@ -13,7 +13,7 @@ const ItemList = ({ children, title, action: Action }: Props) => {
   const { isActive } = useConversation();
   return (
     <Card
-      className={cn('hidden h-full w-full lg:flex-non lg:w-80 p-2', {
+      className={cn('hidden h-full w-full lg:flex-non lg:w-80 p-4', {
         block: !isActive,
         'lg:block': isActive,
       })}
