@@ -5,10 +5,10 @@ import { useMemo } from 'react';
 
 export const useConversation = () => {
   const params = useParams();
-  const conversationId = useMemo(
-    () => params?.conversationId || ('' as string),
-    [params?.conversationId]
-  );
+
+  const conversationId = useMemo(() => params?.conversationId || '', [params]);
+
   const isActive = useMemo(() => !!conversationId, [conversationId]);
+
   return { conversationId, isActive };
 };
