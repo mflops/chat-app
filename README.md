@@ -1,36 +1,97 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Real-Time Chat App
 
-## Getting Started
+This is a real-time chat application built with Next.js, Convex, Clerk, Tailwind CSS, and shadcn. The app allows users to send and receive messages instantly in a clean, modern interface.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Real-Time Messaging**: Messages are sent and received instantly without the need to refresh the page.
+- **Responsive Design**: Fully responsive UI built with Tailwind CSS for a seamless experience across devices.
+- **Authentication**: User authentication managed by Clerk for a secure login and signup process.
+- **State Management**: Efficient state handling with Convex for real-time updates.
+- **UI Components**: Styled with shadcn for a polished and consistent design.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Tech Stack
 
-## Learn More
+- [Next.js](https://nextjs.org/) - React framework for building server-rendered applications.
+- [Convex](https://convex.dev/) - Backend as a service for real-time data synchronization.
+- [Clerk](https://clerk.dev/) - User authentication and management.
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework.
+- [shadcn](https://shadcn.dev/) - Component library for a modern UI design system.
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mflops/chat-app.git
+   cd chat-app
+   ```
 
-## Deploy on Vercel
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. Set up environment variables:
+   - Create a `.env.local` file in the root of the project.
+   - Add the required environment variables for Convex, Clerk, and any other services you're using. For example:
+     ```env
+     NEXT_PUBLIC_CONVEX_URL=your-convex-url
+     NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+     ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4. Start the Convex server:
+   ```bash
+   npx convex dev
+   ```
+
+5. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+   The app will be available at [http://localhost:3000](http://localhost:3000).
+
+---
+
+## Usage
+
+1. Open the application in your browser.
+2. Log in or sign up using Clerk authentication.
+3. Start chatting in real time with other users.
+
+---
+
+## Contributing
+
+Contributions are welcome! Feel free to fork the repository and submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## Acknowledgments
+
+- Thanks to the creators of [Next.js](https://nextjs.org/), [Convex](https://convex.dev/), [Clerk](https://clerk.dev/), [Tailwind CSS](https://tailwindcss.com/), and [shadcn](https://shadcn.dev/).
+
+---
+
+## Contact
+
+For questions or suggestions, feel free to reach out:
+- **Email**: madhurchawla10f@gmail.com
+- **GitHub**: [mflops](https://github.com/mflops)
+
